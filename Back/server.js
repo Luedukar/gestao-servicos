@@ -15,14 +15,14 @@ app.use(cookieParser());
 // Permite que o front consiga acessar a API
 app.use(
   cors({
-    origin: "http://localhost:5173", // endereço do front
+    origin: "http://localhost:3000", // endereço do front
     credentials: true, // permite Cookies
   }),
 );
 
 app.use(express.json());
 
-// Até o momento o enderoço do back é http://localhost:3000, isso permite acessar authRoutes por meio de http://localhost:3000/auth
+// Até o momento o enderoço do back é http://localhost:3050, isso permite acessar authRoutes por meio de http://localhost:3000/auth
 app.use("/auth", authRoutes);
 
 // Testa se está funcionando
@@ -31,6 +31,6 @@ app.get("/", (req, res) => {
 });
 
 // Abre uma porta para receber requisições, nesta caso, porta 3000
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
+app.listen(3050, () => {
+  console.log("Servidor rodando em http://localhost:3050");
 });
